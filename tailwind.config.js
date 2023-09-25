@@ -130,7 +130,7 @@ module.exports = {
         maxContentTab: "650px",
       },
       screens: {
-        sm: "370px",
+        sm: "200px",
       },
     },
   },

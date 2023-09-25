@@ -19,7 +19,7 @@ export default function MyProfile() {
         sm:gap-4 lg:gap-0 md:gap-0
       border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12"
       >
-        <div className="flex items-center gap-x-4">
+        <div className="flex sm:flex-col sm:gap-y-4 md:gap-y-0 md:flex-row items-center gap-x-4">
           <img
             src={user?.image}
             alt={`profile-${user?.firstName}`}
@@ -84,7 +84,7 @@ export default function MyProfile() {
           </IconBtn>
         </div>
 
-        <div className="flex max-w-[500px] justify-between">
+        <div className="flex max-w-maxContent justify-between sm:flex-col sm:gap-y-4 md:gap-y-0 md:flex-row">
           <div className="flex flex-col gap-y-5">
             <div>
               <p className="mb-2 text-sm text-richblack-600">First Name</p>
