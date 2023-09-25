@@ -18,7 +18,7 @@ const Home = () => {
       <div className="relative mx-auto flex flex-col w-11/12 items-center max-w-maxContent text-white justify-between">
         <Link to={"/signup"}>
           <div
-            className="group mx-auto mt-16 w-fit rounded-full bg-richblack-800
+            className="group mx-auto lg:mt-16 md:mt-12 sm:mt-8 w-fit rounded-full bg-richblack-800
            p-1 font-bold text-richblack-200 drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] transition-all 
            duration-200 hover:scale-95 hover:drop-shadow-none"
           >

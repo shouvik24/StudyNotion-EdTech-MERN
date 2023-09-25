@@ -1,5 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  AiOutlineHome,
+  AiOutlineContacts,
+  AiOutlineUserAdd,
+} from "react-icons/ai";
+import { VscSignIn } from "react-icons/vsc";
+import { TbListDetails } from "react-icons/tb";
 
 const ShowItems = ({ SetShowList }) => {
   return (
@@ -9,44 +16,49 @@ const ShowItems = ({ SetShowList }) => {
       overflow-hidden rounded-md border-[1px] border-richblack-700 bg-richblack-800"
       >
         <div className="w-[180px]">
-          <Link to={"/"}>
+          <Link to="/">
             <div
-              className="flex flex-col w-full items-center gap-y-6 py-[10px] px-[12px] 
-        text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25"
+              className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm
+           text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25 justify-center"
             >
+              <AiOutlineHome className="text-lg" />
               Home
             </div>
           </Link>
-          <Link to={"/about"}>
+          <Link to="/about">
             <div
-              className="flex flex-col w-full items-center gap-y-6 py-[10px] px-[12px] 
-        text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25"
+              className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm
+           text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25 justify-center"
             >
-              About Us
+              <TbListDetails className="text-lg" />
+              About
             </div>
           </Link>
-          <Link to={"/contact"}>
+          <Link to="/contact">
             <div
-              className="flex flex-col w-full items-center gap-y-6 py-[10px] px-[12px] 
-        text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25"
+              className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm
+           text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25 justify-center"
             >
-              Contact Us
+              <AiOutlineContacts className="text-lg" />
+              Contact
             </div>
           </Link>
 
           <Link to={"/login"}>
             <div
-              className="flex flex-col w-full items-center gap-y-6 py-[10px] px-[12px] 
-        text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25"
+              className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm
+           text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25 justify-center"
             >
+              <VscSignIn className="text-lg" />
               Log In
             </div>
           </Link>
           <Link to={"/signup"}>
             <div
-              className="flex flex-col w-full items-center gap-y-6 py-[10px] px-[12px] 
-        text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25"
+              className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm
+           text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25 justify-center"
             >
+              <AiOutlineUserAdd className="text-lg" />
               Sign Up
             </div>
           </Link>

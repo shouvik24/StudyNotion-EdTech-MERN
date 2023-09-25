@@ -45,26 +45,40 @@ const Navbar = () => {
     >
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         {/* Logo */}
-        <Link to={"/"}>
-          <img src={logo} alt="Logo" width={160} height={42} loading="lazy" />
-        </Link>
-
+        <div>
+          <Link to={"/"}>
+            <img
+              src={logo}
+              alt="Logo"
+              width={160}
+              height={42}
+              loading="lazy"
+              className="md:block  sm:object-cover"
+            />
+          </Link>
+        </div>
         {/* Nav links */}
-        <nav className="md:block lg:mr-18">
+        <nav>
           <ul className="flex gap-x-6 text-richblack-25">
             {NavbarLinks.map((link, index) => (
               <li key={index}>
                 {link.title === "Catalog" ? (
                   <div
-                    className={`group relative flex cursor-pointer items-center gap-1 ${
+                    className={`group relative flex cursor-pointer items-center gap-1 
+                    
+                    ${
                       matchRoute("/catalog/:catalogName")
                         ? "text-yellow-25"
                         : "text-richblack-25"
                     }`}
                   >
-                    <p>{link.title}</p>
-                    {/* <IoIosArrowDropdownCircle /> */}
-                    <BsChevronDown />
+                    <div className="flex gap-1 sm:ml-4 lg:ml-0 md:ml-0">
+                      <p className="md:block lg:text-[16px] md:text-[16px] sm:text-[12px]">
+                        {link.title}
+                      </p>
+                      {/* <IoIosArrowDropdownCircle /> */}
+                      <BsChevronDown />
+                    </div>
 
                     <div
                       className="invisible absolute left-[50%] top-[50%] z-[1000] 
@@ -106,11 +120,12 @@ const Navbar = () => {
                 ) : link.title === "All Courses" ? (
                   <Link to={link?.path}>
                     <p
-                      className={`md:block ${
-                        matchRoute(link?.path)
-                          ? "text-yellow-25"
-                          : "text-richblack-25"
-                      }`}
+                      className={`md:block lg:text-[16px] md:text-[16px] sm:text-[12px] sm:w-[80px] lg:w-full md:w-full
+                       ${
+                         matchRoute(link?.path)
+                           ? "text-yellow-25"
+                           : "text-richblack-25"
+                       }`}
                     >
                       {link.title}
                     </p>
@@ -173,7 +188,9 @@ const Navbar = () => {
         </div>
         <div className="mr-4 md:hidden">
           {user?.accountType === "Instructor" || token != null ? (
-            <ProfileDropDown />
+            <button onClick={() => setShowList(false)}>
+              <ProfileDropDown />
+            </button>
           ) : (
             <AiOutlineMenu
               fontSize={24}

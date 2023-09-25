@@ -15,7 +15,8 @@ export default function MyProfile() {
         My Profile
       </h1>
       <div
-        className="flex items-center justify-between rounded-md 
+        className="flex items-center justify-between rounded-md sm:flex-col md:flex-row lg:flex-row
+        sm:gap-4 lg:gap-0 md:gap-0
       border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12"
       >
         <div className="flex items-center gap-x-4">
@@ -97,31 +98,34 @@ export default function MyProfile() {
                 {user?.email}
               </p>
             </div>
-            <div>
-              <p className="mb-2 text-sm text-richblack-600">Gender</p>
-              <p className="text-sm font-medium text-richblack-5">
-                {user?.additionalDetails?.gender ?? "Add Gender"}
-              </p>
+            <div className="flex sm:flex-col gap-y-5 md:flex md:">
+              <div>
+                <p className="mb-2 text-sm text-richblack-600">Date Of Birth</p>
+                <p className="text-sm font-medium text-richblack-5">
+                  {formattedDate(user?.additionalDetails?.dateOfBirth) ??
+                    "Add Date Of Birth"}
+                </p>
+              </div>
+              <div>
+                <p className="mb-2 text-sm text-richblack-600">Gender</p>
+                <p className="text-sm font-medium text-richblack-5">
+                  {user?.additionalDetails?.gender ?? "Add Gender"}
+                </p>
+              </div>
             </div>
           </div>
-          <div className="flex flex-col gap-y-5">
+          <div className="flex flex-col gap-y-5 sm:justify-between md:justify-start lg:justify-start">
             <div>
               <p className="mb-2 text-sm text-richblack-600">Last Name</p>
               <p className="text-sm font-medium text-richblack-5">
                 {user?.lastName}
               </p>
             </div>
+
             <div>
               <p className="mb-2 text-sm text-richblack-600">Phone Number</p>
               <p className="text-sm font-medium text-richblack-5">
                 {user?.additionalDetails?.contactNumber ?? "Add Contact Number"}
-              </p>
-            </div>
-            <div>
-              <p className="mb-2 text-sm text-richblack-600">Date Of Birth</p>
-              <p className="text-sm font-medium text-richblack-5">
-                {formattedDate(user?.additionalDetails?.dateOfBirth) ??
-                  "Add Date Of Birth"}
               </p>
             </div>
           </div>
