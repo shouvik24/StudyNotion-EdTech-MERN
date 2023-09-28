@@ -23,7 +23,7 @@ const ShowAllCourses = () => {
     })();
   }, []);
 
-  if (!courses) {
+  if (!courses.length) {
     return (
       <div className="flex justify-center items-center text-3xl text-richblack-5 my-auto">
         {
